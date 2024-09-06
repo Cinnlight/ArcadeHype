@@ -1,17 +1,17 @@
-// Array of game objects with their names and release dates. 
+// Array of game objects with their names, filters, genres, release dates, and image URLs.
 let games = [
-    { name: "Game 1", filter: TBD, genre: TBD, releaseDate: new Date("December 31, 2024 23:59:59"), imageURL: "path/to/img.jpg" },
-    { name: "Game 2", filter: TBD, genre: TBD, releaseDate: new Date("December 31, 2025 23:59:59"), imageURL: "path/to/img.jpg" },
-    { name: "Game 3", filter: TBD, genre: TBD, releaseDate: new Date("December 31, 2026 23:59:59"), imageURL: "path/to/img.jpg" },
-    { name: "Game 4", filter: TBD, genre: TBD, releaseDate: new Date("December 31, 2027 23:59:59"), imageURL: "path/to/img.jpg" },
-    { name: "Game 5", filter: TBD, genre: TBD, releaseDate: new Date("December 31, 2028 23:59:59"), imageURL: "path/to/img.jpg" },
-    { name: "Game 6", filter: TBD, genre: TBD, releaseDate: new Date("December 31, 2029 23:59:59"), imageURL: "path/to/img.jpg" },
-    { name: "Game 7", filter: TBD, genre: TBD, releaseDate: new Date("December 31, 2030 23:59:59"), imageURL: "path/to/img.jpg" },
-    { name: "Game 8", filter: TBD, genre: TBD, releaseDate: new Date("December 31, 2031 23:59:59"), imageURL: "path/to/img.jpg" },
+    { name: "Game 1", filter: "upcoming", genre: "RPG", releaseDate: new Date("December 31, 2024 23:59:59"), imageUrl: "path/to/img1.jpg" },
+    { name: "Game 2", filter: "popular", genre: "Action", releaseDate: new Date("December 31, 2025 23:59:59"), imageUrl: "path/to/img2.jpg" },
+    { name: "Game 3", filter: "new", genre: "Adventure", releaseDate: new Date("December 31, 2026 23:59:59"), imageUrl: "path/to/img3.jpg" },
+    { name: "Game 4", filter: "upcoming", genre: "RPG", releaseDate: new Date("December 31, 2027 23:59:59"), imageUrl: "path/to/img4.jpg" },
+    { name: "Game 5", filter: "popular", genre: "Action", releaseDate: new Date("December 31, 2028 23:59:59"), imageUrl: "path/to/img5.jpg" },
+    { name: "Game 6", filter: "new", genre: "Adventure", releaseDate: new Date("December 31, 2029 23:59:59"), imageUrl: "path/to/img6.jpg" },
+    { name: "Game 7", filter: "upcoming", genre: "RPG", releaseDate: new Date("December 31, 2030 23:59:59"), imageUrl: "path/to/img7.jpg" },
+    { name: "Game 8", filter: "popular", genre: "Action", releaseDate: new Date("December 31, 2031 23:59:59"), imageUrl: "path/to/img8.jpg" },
 ];
 
 function createTimerElements() {
-    // Selects div that will hold all the timers. Element ID is TBD, "timers" is a placeholder.
+    // Selects div that will hold all the timers.
     let timersDiv = document.getElementById("timers");
 
     // Loops through the games array and creates a timer element for each game.
@@ -19,26 +19,21 @@ function createTimerElements() {
         // Creates a div element for each timer.
         let timerDiv = document.createElement("div");
         // Sets the class of the timer div to "timer".
-        timerDiv.classList.add("timer");
+        timerDiv.classList.add("bg-white", "shadow-md", "rounded-lg", "p-6", "text-center");
 
         timerDiv.innerHTML = 
-            // First line creates a header with the name of the game, along with some Tailwind styling as a placeholder. 
-
-            // Second line creates a paragraph element with the ID of the game name, which will be used to display the countdown timer, along with some placeholder Tailwind styling.
-
-            // Third and fourth lines create paragraph elements displaying the filter and genre of the game, along with some placeholder Tailwind styling.
-
-            // Fourth line creates an image element with the game's image URL, alt text, and some placeholder Tailwind styling.
-
-            // (/\s+/g, '') is a regular expression that removes all whitespace from the game name. If the game name is Game 1, then the ID would be Game1.
-            `
-                <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
-                <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
-                <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
-                <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
-                <img src="${game.imageURL}" alt="A promotional image of ${game.name}" class="w-full h-48 object-cover rounded-t-lg mb-4">
-
-            `;
+        // First line creates a header with the name of the game, along with some Tailwind styling as a placeholder. 
+        // Second line creates a paragraph element with the ID of the game name, which will be used to display the countdown timer, along with some placeholder Tailwind styling.
+        // Third and fourth lines create paragraph elements displaying the filter and genre of the game, along with some placeholder Tailwind styling.
+        // Fifth line creates an image element with the game's image URL, alt text, and some placeholder Tailwind styling.
+        // (/\s+/g, '') is a regular expression that removes all whitespace from the game name. If the game name is Game 1, then the ID would be Game1.
+        `
+            <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+            <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
+            <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
+            <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
+            <img src="${game.imageUrl}" alt="A promotional image of ${game.name}" class="w-full h-48 object-cover rounded-t-lg mb-4">
+        `;
         timersDiv.appendChild(timerDiv);
     });
 }
