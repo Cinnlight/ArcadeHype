@@ -1,0 +1,34 @@
+:root {
+    --roboto: Roboto, sans-serif;
+    --pixelify: Pixelify Sans, monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    position:fixed;
+    top:0;
+    left:10em;
+    width:calc(100vw - 10em);
+    min-width:300px;
+}
+
+h1 {
+    font-family: var(--pixelify);
+}
+
+/** Adds text shadow to second half of logo **/
+.h1Logo {
+    text-shadow:2px 2px 0px #000;
+}
+
+/** When screen is smaller than 768px, make header position relative and wider  **/
+@media screen and (max-width:768px) {
+    header {
+        width:100%;
+        position:relative;
+        left:0;
+    }
+}
