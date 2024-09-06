@@ -56,7 +56,7 @@ This project displays a countdown timer for the release dates of various games. 
 1. **Fork the Repository**: Click the "Fork" button at the top right of this page.
 2. **Clone Your Fork**:
     ```bash
-    git clone https://github.com/your-username/game-release-countdown.git
+    git clone git@github.com:Cinnlight/group-02-game-release-tracker.git
     cd game-release-countdown
     ```
 3. **Create a Branch**:
