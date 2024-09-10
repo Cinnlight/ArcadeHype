@@ -33,7 +33,12 @@ function filterGames() {
         });
     } else {
         // This is used to iterate through each game that matches the selected filters and genres, and then creates the timerDiv for each game.
-        games.filter(game => selectedFilters.includes(game.filter) && selectedGenres.includes(game.genre)).forEach(game => {
+        // Initial portion is used to ensure that if no filters are selected (the selectedFilters array is empty), all games are displayed.
+        games.filter(game => {
+            const filterMatch = selectedFilters.length === 0 || selectedFilters.includes(game.filter);
+            const genreMatch = selectedGenres.length === 0 || selectedGenres.includes(game.genre);
+            return filterMatch && genreMatch;
+        }).forEach(game => {
             let timerDiv = document.createElement("div");
             timerDiv.className = "bg-white shadow-md rounded-lg p-6 text-center";
             timerDiv.innerHTML = 
