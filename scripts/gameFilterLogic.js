@@ -1,6 +1,9 @@
-// Function to filter the games by "filter" and "genre", and return the filtered games.
-// Assigning event listeners to the filter buttons to filter the games by "filter" and "genre" will be added once the side bar is implemented in the index.html file.
+// Adds event listeners to the checkboxes.
+document.querySelectorAll('.filter-checkbox, .genre-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', filterGames);
+});
 
+// Function to filter the games by "filter" and "genre", and return the filtered games.
 function filterGames() {
     let timersDiv = document.getElementById("timers");
     // Clear the timersDiv before re-rendering the filtered games, so only games matching the filter are displayed.
@@ -39,5 +42,4 @@ function filterGames() {
     });
 }
 
-// Example usage for calling the function inside of button event listeners:
-// filterGames("PC", "Action");
+filterGames();
