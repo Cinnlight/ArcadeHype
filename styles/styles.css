@@ -24,11 +24,50 @@ h1 {
     text-shadow:2px 2px 0px #000;
 }
 
+#asideBody {
+    width:10em;
+}
+
+h3 {
+    font-family: var(--pixelify);
+    font-weight:bold;
+}
+
+h3::before {
+    content:'≥';
+    animation:blink 1.5s infinite;
+    color:red;
+    font-weight:bold;
+    margin: 0 0 0 5px;
+    text-decoration:none;
+}
+
+@keyframes blink {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+nav ul {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    /** Makes the UL flow vertically in wide enough browsers **/
+    flex-direction:column;
+}
+
 /** When screen is smaller than 768px, make header position relative and wider  **/
 @media screen and (max-width:768px) {
     header {
         width:100%;
         position:relative;
         left:0;
+    }
+    /** Makes the UL flow horizontally in smaller browsers **/
+    nav ul {
+        flex-direction:row;
     }
 }
