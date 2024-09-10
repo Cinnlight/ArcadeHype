@@ -16,30 +16,46 @@ function filterGames() {
     let selectedFilters = Array.from(document.querySelectorAll('input[name="filter"]:checked')).map(cb => cb.value);
     let selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked')).map(cb => cb.value);
 
-    // This is used to iterate through each game that matches the selected filters and genres, and then creates the timerDiv for each game.
-    games.filter(game => selectedFilters.includes(game.filter) && selectedGenres.includes(game.genre)).forEach(game => {
-        let timerDiv = document.createElement("div");
-        timerDiv.className = "bg-white shadow-md rounded-lg p-6 text-center";
-        timerDiv.innerHTML = 
-        // First line creates a header with the name of the game, along with some Tailwind styling as a placeholder. 
+    // Check if no filters or genres are selected
+    if (selectedFilters.length === 0 && selectedGenres.length === 0) {
+        // If no filters or genres are selected, display all games
+        games.forEach(game => {
+            let timerDiv = document.createElement("div");
+            timerDiv.className = "bg-white shadow-md rounded-lg p-6 text-center";
+            timerDiv.innerHTML = `
+                <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+                <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
+                <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
+                <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
+                <img src="${game.imageUrl}" alt="A promotional image of ${game.name}" class="w-full h-48 object-cover rounded-t-lg mb-4">     
+            `;
+            timersDiv.appendChild(timerDiv);
+        });
+    } else {
+        // This is used to iterate through each game that matches the selected filters and genres, and then creates the timerDiv for each game.
+        games.filter(game => selectedFilters.includes(game.filter) && selectedGenres.includes(game.genre)).forEach(game => {
+            let timerDiv = document.createElement("div");
+            timerDiv.className = "bg-white shadow-md rounded-lg p-6 text-center";
+            timerDiv.innerHTML = 
+            // First line creates a header with the name of the game, along with some Tailwind styling as a placeholder. 
 
-        // Second line creates a paragraph element with the ID of the game name, which will be used to display the countdown timer, along with some placeholder Tailwind styling.
+            // Second line creates a paragraph element with the ID of the game name, which will be used to display the countdown timer, along with some placeholder Tailwind styling.
 
-        // Third and fourth lines create paragraph elements displaying the filter and genre of the game, along with some placeholder Tailwind styling.
+            // Third and fourth lines create paragraph elements displaying the filter and genre of the game, along with some placeholder Tailwind styling.
 
-        // Fourth line creates an image element with the game's image URL, alt text, and some placeholder Tailwind styling.
+            // Fourth line creates an image element with the game's image URL, alt text, and some placeholder Tailwind styling.
 
-        // (/\s+/g, '') is a regular expression that removes all whitespace from the game name. If the game name is Game 1, then the ID would be Game1.
-        `
-            <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
-            <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
-            <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
-            <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
-            <img src="${game.imageUrl}" alt="A promotional image of ${game.name}" class="w-full h-48 object-cover rounded-t-lg mb-4">     
-        `;
-        // Append the timerDiv to the timersDiv.
-        timersDiv.appendChild(timerDiv);
-    });
+            // (/\s+/g, '') is a regular expression that removes all whitespace from the game name. If the game name is Game 1, then the ID would be Game1.
+            `
+                <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+                <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
+                <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
+                <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
+                <img src="${game.imageUrl}" alt="A promotional image of ${game.name}" class="w-full h-48 object-cover rounded-t-lg mb-4">     
+            `;
+            timersDiv.appendChild(timerDiv);
+        });
+    }
 }
 
 filterGames();
