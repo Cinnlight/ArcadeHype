@@ -5,6 +5,7 @@
 
 * {
     box-sizing: border-box;
+    color:#000;
 }
 
 header {
@@ -26,19 +27,24 @@ h1 {
 
 #asideBody {
     width:10em;
+    position:fixed;
+    left:0;
+    top:0;
 }
 
-h2 {
+nav h2 {
     font-family:var(--pixelify);
     font-size:1.2em !important;
     text-align:center;
 }
 
-h3 {
+nav h3 {
     font-family: var(--pixelify);
+    text-align:center;
+
 }
 
-h3::before {
+nav h3::before {
     content:'≥';
     animation:blink 1.5s infinite;
     color:red;
@@ -58,7 +64,7 @@ h3::before {
 
 nav ul {
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     justify-content:space-between;
     /** Makes the UL flow vertically in wide enough browsers **/
     flex-direction:column;

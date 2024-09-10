@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/input.css">
     <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body>
     <header class="bg-slate-200 py-5">
@@ -18,11 +19,14 @@
         </h1>
     </header>
     <!-- The 'aside' tag is where the elements that will filter the cards out of the main view go -->
-    <aside class="" id="asideBody">
+    <aside class="bg-white" id="asideBody">
         <nav class="">
             <h2>
                 Filter
             </h2>
+            <h3>
+                Availability
+            </h3>
             <ul>
                 <li>
                     <input type="checkbox" value="Pc" class="filter-checkbox">
@@ -34,6 +38,12 @@
                         Console
                     </input>
                 </li>
+            </ul>
+
+            <h3>
+                Players
+            </h3>
+            <ul>
                 <li>
                     <input type="checkbox" value="Single Player" class="filter-checkbox">
                         Single Player
@@ -41,13 +51,13 @@
                 </li>
                 <li>
                     <input type="checkbox" value="Multi Player" class="filter-checkbox">
-                        Multi Player
+                        Multiplayer
                     </input>
                 </li>
             </ul>
-            <h2>
+            <h3>
                 Genres
-            </h2>
+            </h3>
             <ul>
                 <li>
                     <input type="checkbox" value="Action" class="genre-checkbox">
@@ -68,28 +78,6 @@
                     <input type="checkbox" value="RPG" class="genre-checkbox">
                         RPG
                     </input>
-                </li>
-            </ul>
-            <h3>
-                Availability
-            </h3>
-            <ul>
-                <li>
-                    PC
-                </li>
-                <li>
-                    Console
-                </li>
-            </ul>
-            <h3>
-                Players
-            </h3>
-            <ul>
-                <li>
-                    Single
-                </li>
-                <li>
-                    Multiple
                 </li>
             </ul>
         </nav>
