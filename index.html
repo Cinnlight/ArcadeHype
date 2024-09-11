@@ -21,66 +21,68 @@
     <!-- The 'aside' tag is where the elements that will filter the cards out of the main view go -->
     <aside class="bg-white" id="asideBody">
         <nav class="">
-            <h2>
-                Filter
-            </h2>
-            <h3>
-                Availability
-            </h3>
-            <ul>
-                <li>
-                    <input type="checkbox" name="filter" value="Pc" class="filter-checkbox">
-                        Pc
-                    </input>
-                </li>
-                <li>
-                    <input type="checkbox" name="filter" value="Console" class="filter-checkbox">
+            <section class="collapsible-section">
+                <h2>
+                    <button class="collapsible" id="collapsibleButton">Filter Games</button>
+                </h2>
+                <section class="content" id="collapsibleContent">
+                    <h3 class="bg-slate-200">
+                    Availability
+                    </h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="filter" value="Pc" class="filter-checkbox">
+                                Pc
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="filter" value="Console" class="filter-checkbox">
                         Console
-                    </input>
-                </li>
-            </ul>
-
-            <h3>
-                Players
-            </h3>
-            <ul>
-                <li>
-                    <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox">
-                        Single Player
-                    </input>
-                </li>
-                <li>
-                    <input type="checkbox" value="Multi Player" class="filter-checkbox">
-                        Multiplayer
-
-                    </input>
-                </li>
-            </ul>
-            <h3>
-                Genres
-            </h3>
-            <ul>
-                <li>
-                    <input type="checkbox" name="genre" value="Action" class="genre-checkbox">
-                        Action
-                    </input>
-                </li>
-                <li>
-                    <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox">
-                        Adventure
-                    </input>
-                </li>
-                <li>
-                    <input type="checkbox" name="genre" value="Sports" class="genre-checkbox">
-                        Sports
-                    </input>
-                </li>
-                <li>
-                    <input type="checkbox" name="genre" value="RPG" class="genre-checkbox">
-                        RPG
-                    </input>
-                </li>
-            </ul>
+                            </input>
+                        </li>
+                    </ul>
+                    <h3 class="bg-slate-200">
+                        Players
+                    </h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox">
+                                Single Player
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" value="Multi Player" class="filter-checkbox">
+                                Multiplayer
+                            </input>
+                        </li>
+                    </ul>
+                    <h3 class="bg-slate-200">
+                        Genres
+                    </h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="genre" value="Action" class="genre-checkbox">
+                                Action
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox">
+                                Adventure
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="genre" value="Sports" class="genre-checkbox">
+                                Sports
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="genre" value="RPG" class="genre-checkbox">
+                                RPG
+                            </input>
+                        </li>
+                    </ul>
+                </section>
+            </section>
         </nav>
     </aside>
     <!-- The 'main' tag is where the cards that display each of the different games go -->
@@ -92,6 +94,7 @@
     <!-- this is where the scripts for handling the logic of the webpage goes -->
      <script src="./scripts/countdownLogic.js"></script>
      <script src="./scripts/gameFilterLogic.js"></script>
+     <script src="./scripts/collapsibleFilter.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
