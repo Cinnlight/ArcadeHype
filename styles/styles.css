@@ -56,7 +56,7 @@ nav h3 {
 
 nav h3::before {
     content:'≥';
-    animation:blink 1.5s infinite;
+    animation:blink 1.5s infinite alternate;
     color:rgb(220, 38, 38);
     font-weight:bold;
     margin: 0 0 0 5px;
@@ -105,26 +105,38 @@ nav ul {
     flex-direction:column;
     align-items:center;
     justify-content: flex-end;
+    transition-duration:0.3s;
+}
+
+#timers div:hover {
+    transform:scale(0.98);
+    cursor:pointer;
+}
+
+#timers div:hover h2, #timers div:hover p {
+    background-color:rgba(0,0,0,1);
 }
 
 #timers h2 {
     margin:4px;
     color:#fff;
     text-shadow:1px 1px 0px #000;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.75);
     border-radius:10px;
     width:100%;
     padding:2px 0;
+    transition-duration:0.3s;
 }
 
 #timers div p {
     margin:4px;
     font-family:var(--pixelify);
     text-shadow:1px 1px 0px #000;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.75);
     border-radius:10px;
     width:100%;
     padding:2px 0;
+    transition-duration:0.3s;
 }
 
 #timers div p:first-of-type {
