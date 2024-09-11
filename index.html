@@ -29,14 +29,12 @@
             </h3>
             <ul>
                 <li>
-                    <input type="checkbox" name="filter" value="Pc" class="filter-checkbox">
-                        Pc
-                    </input>
+                    <input type="checkbox" name="filter" value="Pc" class="filter-checkbox" id="filter-Pc">
+                         <label for="filter-Pc">PC</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="filter" value="Console" class="filter-checkbox">
-                        Console
-                    </input>
+                    <input type="checkbox" name="filter" value="Console" class="filter-checkbox" id="filter-Console">
+                        <label for="filter-Console">Console</label>
                 </li>
             </ul>
             <h3 class="bg-slate-200">
@@ -44,15 +42,12 @@
             </h3>
             <ul>
                 <li>
-                    <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox">
-                        Single Player
-                    </input>
+                    <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox" id="filter-Single-Player">
+                        <label for="filter-Single-Player">Single Player</label> 
                 </li>
                 <li>
-                    <input type="checkbox" value="Multi Player" class="filter-checkbox">
-                        Multiplayer
-
-                    </input>
+                    <input type="checkbox" value="Multi Player" class="filter-checkbox" id="filter-Multi-Player">
+                       <label for="filter-Multi-Player">Multiplayer</label>
                 </li>
             </ul>
             <h3 class="bg-slate-200">
@@ -60,24 +55,20 @@
             </h3>
             <ul>
                 <li>
-                    <input type="checkbox" name="genre" value="Action" class="genre-checkbox">
-                        Action
-                    </input>
+                    <input type="checkbox" name="genre" value="Action" class="genre-checkbox" id="genre-Action">
+                        <label for="genre-Action">Action</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox">
-                        Adventure
-                    </input>
+                    <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox" id="genre-Adventure">
+                        <label for="genre-Adventure">Adventure</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="genre" value="Sports" class="genre-checkbox">
-                        Sports
-                    </input>
+                    <input type="checkbox" name="genre" value="Sports" class="genre-checkbox" id="genre-Sports">
+                        <label for="genre-Sports">Sports</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="genre" value="RPG" class="genre-checkbox">
-                        RPG
-                    </input>
+                    <input type="checkbox" name="genre" value="RPG" class="genre-checkbox" id="genre-RPG">
+                        <label for="genre-RPG">RPG</label>
                 </li>
             </ul>
         </nav>
@@ -91,6 +82,7 @@
     <!-- this is where the scripts for handling the logic of the webpage goes -->
      <script src="./scripts/countdownLogic.js"></script>
      <script src="./scripts/gameFilterLogic.js"></script>
+     <script src="./scripts/collapsibleFilter.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
