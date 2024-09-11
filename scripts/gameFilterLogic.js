@@ -1,7 +1,12 @@
-// Adds event listeners to the checkboxes.
+// Adds event listeners to the checkboxes and subsequently calls filterGames() and saveCheckboxState().
 document.querySelectorAll('.filter-checkbox, .genre-checkbox').forEach(checkbox => {
-    checkbox.addEventListener('change', filterGames);
+    checkbox.addEventListener('change', () => {
+        filterGames();
+        saveCheckboxState();
+    });
 });
+
+
 
 // Function to filter the games by "filter" and "genre", and return the filtered games.
 function filterGames() {
@@ -30,7 +35,7 @@ function filterGames() {
                     
             `;
             timersDiv.appendChild(timerDiv);
-        });
+        }); // Add closing parenthesis for the event listener function.
     } else {
         // This is used to iterate through each game that matches the selected filters and genres, and then creates the timerDiv for each game.
         // Initial portion is used to ensure that if no filters are selected (the selectedFilters array is empty), all games are displayed.
@@ -63,4 +68,25 @@ function filterGames() {
     }
 }
 
+// Function to select all checkboxes, iterate through them, and save their state to localStorage.
+function saveCheckboxState() {
+    document.querySelectorAll('.filter-checkbox, .genre-checkbox').forEach(checkbox => {
+        localStorage.setItem(checkbox.id, checkbox.checked);
+    });
+
+}
+
+// Function to select all checkboxes, iterate through them, and load their state from localStorage.
+function loadCheckboxState() {
+    document.querySelectorAll('.filter-checkbox, .genre-checkbox').forEach(checkbox => {
+        const checked = localStorage.getItem(checkbox.id) === 'true';
+        checkbox.checked = checked;
+    });
+}
+
+
+// Call the loadCheckboxState() function to load the checkbox state from localStorage when the page loads.
+loadCheckboxState();
+
+// Call the filterGames() function to filter the games based on the selected filters and genres when the page loads.
 filterGames();
