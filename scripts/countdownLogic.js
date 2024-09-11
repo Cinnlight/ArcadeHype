@@ -79,7 +79,7 @@ function updateTimers() {
         if (timeRemaining > 0) {
             timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         } else {
-            timerElement.innerHTML = "Released!<br> Click the link to view the game on its native platform.";
+            timerElement.innerHTML = "Released!<br> Happy gaming.";
         }
     });
 }
