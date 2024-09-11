@@ -5,14 +5,14 @@
 
 * {
     box-sizing: border-box;
-    color:#000;
 }
 
 body {
     display:grid;
-    grid-template-columns: 10em 1fr;
+    grid-template-columns: 15em 1fr;
     grid-template-rows: 5em 20em 1fr;
     width:100%;
+    color:#000;
 }
 
 header {
@@ -57,7 +57,7 @@ nav h3 {
 nav h3::before {
     content:'≥';
     animation:blink 1.5s infinite;
-    color:red;
+    color:rgb(220, 38, 38);
     font-weight:bold;
     margin: 0 0 0 5px;
     text-decoration:none;
@@ -86,8 +86,47 @@ nav ul {
     z-index:1;
 }
 
-/** When screen is smaller than 768px, make header position relative and wider  **/
+#timers {
+    display:flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    gap:2em 1em;
+    padding:1em 0;
+}
+
+#timers div {
+    width: 20em;
+    height:25em;
+    flex-grow: 2;
+}
+
+#timers h2 {
+    margin:0;
+    color:rgb(220, 38, 38);
+    text-shadow:1px 1px 0px #000;
+}
+
+#timers div p:first-of-type {
+    margin:4px;
+    font-family:var(--pixelify);
+    background-color: rgb(226,232,240);
+    border-radius:10px;
+    box-shadow:1px 1px 3px #00000033;
+}
+
+#timers div img {
+    border:1px solid #000;
+    box-shadow:2px 2px 5px #00000044;
+}
+
 @media screen and (max-width:768px) {
+    /** Turn the body into a single column when you size down **/
+    body {
+        display:flex;
+        flex-direction:column;
+    }
+    /** When screen is smaller than 768px, make header position relative and wider  **/
     header {
         width:100%;
         position:relative;
@@ -96,5 +135,7 @@ nav ul {
     /** Makes the UL flow horizontally in smaller browsers **/
     nav ul {
         flex-direction:row;
+        align-items:center;
+        justify-content:space-evenly;
     }
 }
