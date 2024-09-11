@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/input.css">
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  <body>
+    <header class="bg-slate-200 py-5">
+        <!-- Header and title text -->
+        <h1 class="text-4xl text-center">
+            Arcade<b class="text-red-600 h1Logo">Hype!</b>
+        </h1>
+    </header>
+    <!-- The 'aside' tag is where the elements that will filter the cards out of the main view go -->
+    <aside class="bg-white" id="asideBody">
+        <nav class="">
+            <h2>
+                Filter
+            </h2>
+            <h3>
+                Availability
+            </h3>
+            <ul>
+                <li>
+                    <input type="checkbox" name="filter" value="Pc" class="filter-checkbox">
+                        Pc
+                    </input>
+                </li>
+                <li>
+                    <input type="checkbox" name="filter" value="Console" class="filter-checkbox">
+                        Console
+                    </input>
+                </li>
+            </ul>
+
+            <h3>
+                Players
+            </h3>
+            <ul>
+                <li>
+                    <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox">
+                        Single Player
+                    </input>
+                </li>
+                <li>
+                    <input type="checkbox" value="Multi Player" class="filter-checkbox">
+                        Multiplayer
+
+                    </input>
+                </li>
+            </ul>
+            <h3>
+                Genres
+            </h3>
+            <ul>
+                <li>
+                    <input type="checkbox" name="genre" value="Action" class="genre-checkbox">
+                        Action
+                    </input>
+                </li>
+                <li>
+                    <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox">
+                        Adventure
+                    </input>
+                </li>
+                <li>
+                    <input type="checkbox" name="genre" value="Sports" class="genre-checkbox">
+                        Sports
+                    </input>
+                </li>
+                <li>
+                    <input type="checkbox" name="genre" value="RPG" class="genre-checkbox">
+                        RPG
+                    </input>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- The 'main' tag is where the cards that display each of the different games go -->
+    <main class="" id="mainBody">
+        <section class="" id="timers" >
+            <!-- This is where the background img for the game will be overlayed by the countdown timer -->
+        </section>
+    </main>
+    <!-- this is where the scripts for handling the logic of the webpage goes -->
+     <script src="./scripts/countdownLogic.js"></script>
+     <script src="./scripts/gameFilterLogic.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
