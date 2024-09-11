@@ -78,6 +78,11 @@ nav ul {
     justify-content:space-between;
     /** Makes the UL flow vertically in wide enough browsers **/
     flex-direction:column;
+    padding: 7% 0 7% 7%;
+}
+
+nav ul li {
+    padding: 1.5% 0 1.5% 0;
 }
 
 nav input {
@@ -151,6 +156,42 @@ nav input:checked + label {
     color:#fff;
 }
 
+.collapsible-section {
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    overflow: hidden;
+    width: 100%;
+    /* max-width: 600px; */
+    margin: auto;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.collapsible:after {
+    content: '\25BC'; /* Down arrow */
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.collapsible.active:after {
+    transform: rotate(180deg); /* Up arrow */
+}
+
+/* .content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: block; 
+} */
+
+
+
 @media screen and (max-width:768px) {
     /** Turn the body into a single column when you size down **/
     body {
@@ -168,5 +209,24 @@ nav input:checked + label {
         flex-direction:row;
         align-items:center;
         justify-content:space-evenly;
+        padding: 3% 0 3% 3%;
     }
+
+    .collapsible {
+        display: block;
+    }
+
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        display: none;
+    }
+
+    .content.expanded {
+        display: block;
+        max-height: 500px; 
+        /* Arbitrary large value to fully expand */
+    }
+    
 }
