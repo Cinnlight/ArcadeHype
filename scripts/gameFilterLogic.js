@@ -35,9 +35,10 @@ function filterGames() {
         // This is used to iterate through each game that matches the selected filters and genres, and then creates the timerDiv for each game.
         // Initial portion is used to ensure that if no filters are selected (the selectedFilters array is empty), all games are displayed.
         games.filter(game => {
-            const filterMatch = selectedFilters.length === 0 || selectedFilters.includes(game.filter);
-            const genreMatch = selectedGenres.length === 0 || selectedGenres.includes(game.genre);
+            const filterMatch = selectedFilters.length === 0 || selectedFilters.some(filter => game.filter.includes(filter));
+            const genreMatch = selectedGenres.length === 0 || selectedGenres.some(genre => game.genre.includes(genre));
             return filterMatch && genreMatch;
+            
         }).forEach(game => {
             let timerDiv = document.createElement("div");
             timerDiv.className = "bg-white shadow-md rounded-lg p-6 text-center";
