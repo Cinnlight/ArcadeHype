@@ -80,6 +80,14 @@ nav ul {
     flex-direction:column;
 }
 
+nav input {
+    display:none;
+}
+
+nav input:checked + label {
+    font-weight:bold;
+}
+
 #mainBody {
     grid-column: 2 / 3;
     grid-row: 2 / 4;
@@ -121,7 +129,7 @@ nav ul {
     margin:4px;
     color:#fff;
     text-shadow:1px 1px 0px #000;
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0,0,0,0.7);
     border-radius:10px;
     width:100%;
     padding:2px 0;
@@ -132,7 +140,7 @@ nav ul {
     margin:4px;
     font-family:var(--pixelify);
     text-shadow:1px 1px 0px #000;
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0,0,0,0.7);
     border-radius:10px;
     width:100%;
     padding:2px 0;
