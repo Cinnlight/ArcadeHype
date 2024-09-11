@@ -99,25 +99,36 @@ nav ul {
     width: 20em;
     height:25em;
     flex-grow: 2;
+    background-size:cover;
+    background-position:center top;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: flex-end;
 }
 
 #timers h2 {
-    margin:0;
-    color:rgb(220, 38, 38);
+    margin:4px;
+    color:#fff;
     text-shadow:1px 1px 0px #000;
+    background-color: rgba(0,0,0,0.8);
+    border-radius:10px;
+    width:100%;
+    padding:2px 0;
+}
+
+#timers div p {
+    margin:4px;
+    font-family:var(--pixelify);
+    text-shadow:1px 1px 0px #000;
+    background-color: rgba(0,0,0,0.8);
+    border-radius:10px;
+    width:100%;
+    padding:2px 0;
 }
 
 #timers div p:first-of-type {
-    margin:4px;
-    font-family:var(--pixelify);
-    background-color: rgb(226,232,240);
-    border-radius:10px;
-    box-shadow:1px 1px 3px #00000033;
-}
-
-#timers div img {
-    border:1px solid #000;
-    box-shadow:2px 2px 5px #00000044;
+    color:#fff;
 }
 
 @media screen and (max-width:768px) {
