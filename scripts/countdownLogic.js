@@ -12,7 +12,7 @@ let games = [
 
     { name: "NHL 25", filter: ["Console"], genre: ["Sports"], releaseDate: new Date("September 26, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/08/22/nhl-25-button-1724331930889.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
 
-    { name: "Dragon Age: The Veilguard", filter: ["Single Player"], genre: ["RPG"], releaseDate: new Date("October 30, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2023/05/31/library-600x900-1685557954159.jpeg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
+    { name: "Dragon Age: The Veilguard", filter: ["Single Player"], genre: ["RPG"], releaseDate: new Date("October 30, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/06/06/da-veilguard-1717691587829.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
 
     { name: "Drova - Forsaken Kin", filter: ["Single Player"], genre: ["RPG"], releaseDate: new Date("October 14, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2023/05/31/library-600x900-1685557954159.jpeg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
 ];
@@ -26,7 +26,7 @@ function createTimerElements() {
         // Creates a div element for each timer.
         let timerDiv = document.createElement("div");
         // Sets the class of the timer div to "timer".
-        timerDiv.classList.add("bg-white", "shadow-md", "rounded-lg", "p-6", "text-center");
+        timerDiv.classList.add(`bg-[url(${game.imageUrl})]`, "shadow-md", "rounded-lg", "p-6", "text-center");
         timerDiv.id = game.name.replace(/[\s']/g, '').toLowerCase();
 
         timerDiv.innerHTML = 
@@ -40,7 +40,7 @@ function createTimerElements() {
             <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
             <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
             <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
-            <img src="${game.imageUrl}" alt="A promotional image of ${game.name}" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            
         `;
         timersDiv.appendChild(timerDiv);
     });

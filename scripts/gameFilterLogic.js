@@ -21,13 +21,13 @@ function filterGames() {
         // If no filters or genres are selected, display all games
         games.forEach(game => {
             let timerDiv = document.createElement("div");
-            timerDiv.className = "bg-white shadow-md rounded-lg p-6 text-center";
+            timerDiv.className = `bg-[url(${game.imageUrl})] shadow-md rounded-lg p-6 text-center`;
             timerDiv.innerHTML = `
                 <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
                 <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
                 <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
                 <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
-                <img src="${game.imageUrl}" alt="A promotional image of ${game.name}" class="w-full h-48 object-cover rounded-t-lg mb-4">     
+                    
             `;
             timersDiv.appendChild(timerDiv);
         });
@@ -40,7 +40,7 @@ function filterGames() {
             return filterMatch && genreMatch;
         }).forEach(game => {
             let timerDiv = document.createElement("div");
-            timerDiv.className = "bg-white shadow-md rounded-lg p-6 text-center";
+            timerDiv.className = `bg-[url(${game.imageUrl})] shadow-md rounded-lg p-6 text-center`;
             timerDiv.innerHTML = 
             // First line creates a header with the name of the game, along with some Tailwind styling as a placeholder. 
 
@@ -56,7 +56,7 @@ function filterGames() {
                 <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
                 <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
                 <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
-                <img src="${game.imageUrl}" alt="A promotional image of ${game.name}" class="w-full h-48 object-cover rounded-t-lg mb-4">     
+                     
             `;
             timersDiv.appendChild(timerDiv);
         });
