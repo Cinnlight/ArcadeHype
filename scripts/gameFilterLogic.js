@@ -25,8 +25,8 @@ function filterGames() {
             timerDiv.innerHTML = `
                 <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
                 <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
-                <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
-                <p class="text-sm text-gray-600">Genre: ${game.genre}</p>
+                <p class="text-sm text-gray-600">Availability: ${game.filter.join(',&nbsp')}</p>
+                <p class="text-sm text-gray-600">Genre: ${game.genre.join(',&nbsp')}</p>
                     
             `;
             timersDiv.appendChild(timerDiv);
@@ -55,8 +55,8 @@ function filterGames() {
             `
                 <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
                 <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
-                <p class="text-sm text-gray-600">Filter: ${game.filter}</p>
-                <p class="text-sm text-gray-600">Genre: ${game.genre}</p>         
+                <p class="text-sm text-gray-600">Availability: ${game.filter.join(',&nbsp')}</p>
+                <p class="text-sm text-gray-600">Genre: ${game.genre.join(',&nbsp')}</p>         
             `;
             timersDiv.appendChild(timerDiv);
         });
