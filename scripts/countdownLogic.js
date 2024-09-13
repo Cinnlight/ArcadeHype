@@ -33,13 +33,14 @@ let games = [
 function createTimerElements() {
     // Selects div that will hold all the timers.
     let timersDiv = document.getElementById("timers");
-
+    let modal = document.getElementById("myModal");
+    let modalContent = document.getElementById("modal-content");
     // Loops through the games array and creates a timer element for each game.
     games.forEach(game => {
         // Creates a div element for each timer.
         let timerDiv = document.createElement("div");
         // Sets the class of the timer div to "timer".
-        timerDiv.classList.add(`bg-[url(${game.imageUrl})]`, "shadow-md", "rounded-lg", "p-6", "text-center");
+        timerDiv.classList.add(`bg-[url(${game.imageUrl})]`, "shadow-md", "rounded-lg", "p-6", "text-center", "clickable");
         timerDiv.id = game.name.replace(/[\s']/g, '').toLowerCase();
 
         timerDiv.innerHTML = 
@@ -55,9 +56,29 @@ function createTimerElements() {
             <p class="text-sm text-gray-600">Genre: ${game.genre.join(',&nbsp')}</p>
             
         `;
+        // this will add the eventlistener to each of the created elements and populate the modal element with relevant info and make it viewable
+
+        timerDiv.addEventListener('click', () => {
+            console.log(`${game.name}`);
+            modalContent.classList.add(`bg-[url(${game.imageUrl})]`, "shadow-md", "rounded-lg", "p-6", "text-center");
+            modalContent.innerHTML = 
+            // this creates the same layout and styling as the game cards and populates it as in the modal
+            `
+                <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+                <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
+                <p class="text-sm text-gray-600">Availability: ${game.filter.join(',&nbsp')}</p>
+                <p class="text-sm text-gray-600">Genre: ${game.genre.join(',&nbsp')}</p>
+            `;
+            modal.style.display = "block";
+        });
+        window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                };
+        };
         timersDiv.appendChild(timerDiv);
     });
-}
+};
 
 function updateTimers() {
     // Loops through the games array and updates the countdown timer for each game.
