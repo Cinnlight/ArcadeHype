@@ -12,24 +12,24 @@
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body>
-    <header class="bg-white py-5">
+    <header class="bg-white py-5" id="header">
         <!-- Header and title text -->
         <h1 class="text-4xl text-center bg-black w-[300px] mx-auto">
             <span class="text-white">Arcade</span><b class="text-red-600 h1Logo">Hype!</b>
         </h1>
     </header>
     <!-- The 'aside' tag is where the elements that will filter the cards out of the main view go -->
-    <aside class="bg-white" id="asideBody">
+    <aside class="bg-white" id="aside">
         <nav>
-            <section class="collapsible-section">
-                <h2 class="border border-slate-200">
+            <section class="collapsible-section" id="darkModeFilter">
+                <h2 class="border border-slate-200" id="filterButton">
                     <button class="collapsible" id="collapsibleButton">Filter Games</button>
                 </h2>
                 <section class="content" id="collapsibleContent">
             <h3 class="bg-slate-200">
                 Availability
             </h3>
-            <ul>
+            <ul id="darkModeAvailability">
                 <li>
                     <input type="checkbox" name="filter" value="Pc" class="filter-checkbox" id="filter-Pc">
                          <label for="filter-Pc">PC</label>
@@ -42,7 +42,7 @@
             <h3 class="bg-slate-200">
                 Players
             </h3>
-            <ul>
+            <ul id="darkModePlayers">
                 <li>
                     <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox" id="filter-Single-Player">
                         <label for="filter-Single-Player">Single Player</label> 
@@ -55,7 +55,7 @@
             <h3 class="bg-slate-200">
                 Genres
             </h3>
-            <ul>
+            <ul id="darkModeGenres">
                 <li>
                     <input type="checkbox" name="genre" value="Action" class="genre-checkbox" id="genre-Action">
                         <label for="genre-Action">Action</label>
@@ -73,6 +73,10 @@
                         <label for="genre-RPG">RPG</label>
                 </li>
             </ul>
+            <h3 class="bg-slate-200"><button id="dark-mode-toggle">
+                Dark Mode
+            </button></h3>
+        <!-- <button id="dark-mode-toggle">Dark Mode</button> -->
         </section>
     </section>
         </nav>
@@ -87,6 +91,7 @@
      <script src="./scripts/countdownLogic.js"></script>
      <script src="./scripts/gameFilterLogic.js"></script>
      <script src="./scripts/collapsibleFilter.js"></script>
+     <script src="./scripts/darkMode.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
