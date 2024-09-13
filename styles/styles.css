@@ -96,6 +96,7 @@ nav input {
 
 nav label {
     font-size:0.9em;
+    cursor:pointer;
 }
 
 nav input:checked + label {
@@ -175,21 +176,18 @@ nav input:checked + label::before {
 }
 
 .collapsible-section {
-    /* border: 1px solid #ccc; */
-    /* border-radius: 5px; */
     overflow: hidden;
     width: 100%;
-    /* max-width: 600px; */
     margin: auto;
 }
 
 .collapsible {
-    cursor: pointer;
     padding: 10px;
     text-align: center;
     border: none;
     outline: none;
     width: 100%;
+    cursor: default;
 }
 
 .collapsible:after {
@@ -265,22 +263,59 @@ body.dark-mode {
         justify-content:space-evenly;
         padding: 3% 0 3% 3%;
     }
-
+    /** Adjusts the height requirements for the AsideBody **/
+    #asideBody {
+        position:relative;
+    }
+    /** Makes pointer show when function is usable **/
+    .collapsible {
+        cursor: pointer;
+    }
+    /** Hides arrow until needed **/
+    .collapsible:after {
+        content: '\25BC'; /* Down arrow */
+        margin-left: 10px;
+        transition: transform 0.3s;
+    }
+    
+    .collapsible.active:after {
+        transform: rotate(180deg); /* Up arrow */
+    }
+    
     .collapsible {
         display: block;
     }
-
+    
     .content {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
         display: none;
     }
-
+    
     .content.expanded {
         display: block;
-        max-height: 500px; 
-        /* Arbitrary large value to fully expand */
-    }
-    
+        max-height: 100%;
+    }   
+}
+
+/* Style for Back to Top Button */
+#back-to-top {
+    display: none; /* Hidden initially */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1000; /* To ensure it stays on top of other elements */
+}
+
+#back-to-top:hover {
+    background-color: #ff5d5d;
 }
