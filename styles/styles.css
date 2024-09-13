@@ -278,7 +278,7 @@ nav input:checked + label::before {
     text-align: center;
     cursor: pointer;
     text-decoration: none;
-    z-index: 1000; /* To ensure it stays on top of other elements */
+    z-index: 999; /* To ensure it stays on top of other elements */
 }
 
 #back-to-top:hover {

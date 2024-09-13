@@ -1,7 +1,7 @@
 .modal {
   display: none; 
   position: fixed; 
-  z-index: 400; 
+  z-index: 1000; 
   left: 0;
   top: 0;
   width: 100%; 
@@ -11,21 +11,24 @@
 }
 
 .modal-content {
-  margin: 15% auto;
-  padding: 20px;
+  margin: 10%;
+  height: 80%;
   border: 2px solid white;
   opacity: 100;
+  background-position: center;
+  background-size: cover;
+  z-index: 1000;
 }
 
 /* this is where I added the ame styling for the modal content */
 
 #modal-content {
   display:flex;
-  align-items: center;
+  align-items: start;
   justify-content:space-evenly;
   flex-wrap:wrap;
   gap:2em 1em;
-  padding:1em 0;
+  padding-top: 5%;
 }
 
 #modal-content div {
