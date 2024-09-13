@@ -12,18 +12,20 @@
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body>
-    <header class="bg-white py-5">
+    <header class="bg-slate-200 p-3">
         <!-- Header and title text -->
         <h1 class="text-4xl text-center bg-black w-[300px] mx-auto">
-            <span class="text-white">Arcade</span><b class="text-red-600 h1Logo">Hype!</b>
+            <span class="text-white">Arcade</span><b class="text-red-600">Hype!</b>
         </h1>
     </header>
     <!-- The 'aside' tag is where the elements that will filter the cards out of the main view go -->
     <aside class="bg-white" id="asideBody">
-        <nav class="">
-            <h2>
-                Filter Games
-            </h2>
+        <nav>
+            <section class="collapsible-section">
+                <h2 class="border border-slate-200">
+                    <button class="collapsible" id="collapsibleButton">Filter Games</button>
+                </h2>
+                <section class="content" id="collapsibleContent">
             <h3 class="bg-slate-200">
                 Availability
             </h3>
@@ -71,6 +73,8 @@
                         <label for="genre-RPG">RPG</label>
                 </li>
             </ul>
+        </section>
+    </section>
         </nav>
     </aside>
     <!-- The 'main' tag is where the cards that display each of the different games go -->
