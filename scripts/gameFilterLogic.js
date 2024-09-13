@@ -41,7 +41,6 @@ function filterGames() {
             <p class="text-sm text-gray-400">Genre: ${game.genre.join(',&nbsp')}</p>
         `;
         timerDiv.addEventListener('click', () => {
-            console.log(`${game.name}`);
             modalContent.style.backgroundImage = `url("${game.imageUrl}")`;
             modalContent.classList.add( "shadow-md", "rounded-lg", "p-6", "text-center");
             modalContent.innerHTML = 
