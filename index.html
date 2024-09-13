@@ -8,78 +8,83 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/modal.css">
 </head>
 <body>
-  <header class="bg-slate-200 p-3">
-    <h1 class="text-4xl text-center bg-black w-[300px] mx-auto">
-      <span class="text-white">Arcade</span><b class="text-red-600">Hype!</b>
-    </h1>
-  </header>
+    <header class="bg-slate-200 p-3">
+        <h1 class="text-4xl text-center bg-black w-[300px] mx-auto">
+            <span class="text-white">Arcade</span><b class="text-red-600">Hype!</b>
+        </h1>
+    </header>
   
-  <aside class="bg-white" id="asideBody">
-    <nav>
-      <section class="collapsible-section">
-        <button class="collapsible">Filter Games</button>
-        <section class="content">
-          <h3 class="bg-slate-200">Availability</h3>
-          <ul>
-            <li>
-              <input type="checkbox" name="filter" value="Pc" class="filter-checkbox" id="filter-Pc">
-              <label for="filter-Pc">PC</label>
-            </li>
-            <li>
-              <input type="checkbox" name="filter" value="Console" class="filter-checkbox" id="filter-Console">
-              <label for="filter-Console">Console</label>
-            </li>
-          </ul>
-          <h3 class="bg-slate-200">Players</h3>
-          <ul>
-            <li>
-              <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox" id="filter-Single-Player">
-              <label for="filter-Single-Player">Single Player</label>
-            </li>
-            <li>
-              <input type="checkbox" name="filter" value="Multi Player" class="filter-checkbox" id="filter-Multi-Player">
-              <label for="filter-Multi-Player">Multiplayer</label>
-            </li>
-          </ul>
-          <h3 class="bg-slate-200">Genres</h3>
-          <ul>
-            <li>
-              <input type="checkbox" name="genre" value="Action" class="genre-checkbox" id="genre-Action">
-              <label for="genre-Action">Action</label>
-            </li>
-            <li>
-              <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox" id="genre-Adventure">
-              <label for="genre-Adventure">Adventure</label>
-            </li>
-            <li>
-              <input type="checkbox" name="genre" value="Sports" class="genre-checkbox" id="genre-Sports">
-              <label for="genre-Sports">Sports</label>
-            </li>
-            <li>
-              <input type="checkbox" name="genre" value="RPG" class="genre-checkbox" id="genre-RPG">
-              <label for="genre-RPG">RPG</label>
-            </li>
-          </ul>
+    <aside class="bg-white" id="asideBody">
+        <nav>
+            <section class="collapsible-section">
+                <button class="collapsible">Filter Games</button>
+                <section class="content">
+                    <h3 class="bg-slate-200">Availability</h3>
+                    <ul>
+                        <li>
+                        <input type="checkbox" name="filter" value="Pc" class="filter-checkbox" id="filter-Pc">
+                        <label for="filter-Pc">PC</label>
+                        </li>
+                        <li>
+                        <input type="checkbox" name="filter" value="Console" class="filter-checkbox" id="filter-Console">
+                        <label for="filter-Console">Console</label>
+                        </li>
+                    </ul>
+                    <h3 class="bg-slate-200">Players</h3>
+                    <ul>
+                        <li>
+                        <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox" id="filter-Single-Player">
+                        <label for="filter-Single-Player">Single Player</label>
+                        </li>
+                        <li>
+                        <input type="checkbox" name="filter" value="Multi Player" class="filter-checkbox" id="filter-Multi-Player">
+                        <label for="filter-Multi-Player">Multiplayer</label>
+                        </li>
+                    </ul>
+                    <h3 class="bg-slate-200">Genres</h3>
+                    <ul>
+                        <li>
+                        <input type="checkbox" name="genre" value="Action" class="genre-checkbox" id="genre-Action">
+                        <label for="genre-Action">Action</label>
+                        </li>
+                        <li>
+                        <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox" id="genre-Adventure">
+                        <label for="genre-Adventure">Adventure</label>
+                        </li>
+                        <li>
+                        <input type="checkbox" name="genre" value="Sports" class="genre-checkbox" id="genre-Sports">
+                        <label for="genre-Sports">Sports</label>
+                        </li>
+                        <li>
+                        <input type="checkbox" name="genre" value="RPG" class="genre-checkbox" id="genre-RPG">
+                        <label for="genre-RPG">RPG</label>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </nav>
+    </aside>
+    <!-- The 'main' tag is where the cards that display each of the different games go -->
+    <main class="" id="mainBody">
+        <section class="" id="timers" >
+            <!-- This is where the background img for the game will be overlayed by the countdown timer -->
         </section>
-      </section>
-    </nav>
-  </aside>
-  
-  <main id="mainBody">
-    <section id="timers">
-      <!-- Game cards will be displayed here -->
-    </section>
-  </main>
-  
-  <footer>
-    <a href="#top" id="back-to-top" class="back-to-top">Back to Top</a>
-  </footer>
+    </main>
+    <div id="myModal" class="modal">
+        <div id="modal-content" class="modal-content">
+            <!-- the background img should be pulled from the object that has the game info -->
+        </div>
+    </div>
+    <footer>
+        <a href="#top" id="back-to-top" class="back-to-top">Back to Top</a>
+    </footer>
 
-  <script src="./scripts/countdownLogic.js"></script>
-  <script src="./scripts/gameFilterLogic.js"></script>
-  <script src="./scripts/script.js"></script>
+    <script src="./scripts/countdownLogic.js"></script>
+    <script src="./scripts/gameFilterLogic.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
 

@@ -31,6 +31,8 @@ function filterGames() {
     // Render the filtered games
     filteredGames.forEach(game => {
         let timerDiv = document.createElement("div");
+        let modal = document.getElementById("myModal");
+        let modalContent = document.getElementById("modal-content");
         timerDiv.className = `bg-[url(${game.imageUrl})] shadow-md rounded-lg p-6 text-center`;
         timerDiv.innerHTML = `
             <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
@@ -38,6 +40,23 @@ function filterGames() {
             <p class="text-sm text-gray-400">Availability: ${game.filter.join(',&nbsp')}</p>
             <p class="text-sm text-gray-400">Genre: ${game.genre.join(',&nbsp')}</p>
         `;
+        timerDiv.addEventListener('click', () => {
+            console.log(`${game.name}`);
+            modalContent.style.backgroundImage = `url("${game.imageUrl}")`;
+            modalContent.classList.add( "shadow-md", "rounded-lg", "p-6", "text-center");
+            modalContent.innerHTML = 
+            // this creates the same layout and styling as the game cards and populates it as in the modal
+            `
+                <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+                <p class="text-lg font-medium mb-4">${game.blurb}</p>
+            `;
+            modal.style.display = "block";
+        });
+        window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                };
+        };
         timersDiv.appendChild(timerDiv);
     });
 
