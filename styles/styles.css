@@ -24,7 +24,7 @@ header {
     grid-row:1 / 2;
     width:100%;
     min-width:200px;
-    z-index:99;
+    z-index:3;
 }
 
 h1 {
@@ -174,6 +174,7 @@ nav input:checked + label::before {
 #timers div p:first-of-type {
     color:#fff;
 }
+
 
 .collapsible-section {
     overflow: hidden;

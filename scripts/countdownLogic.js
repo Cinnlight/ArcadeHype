@@ -60,20 +60,23 @@ function createTimerElements() {
 
         timerDiv.addEventListener('click', () => {
             console.log(`${game.name}`);
-            modalContent.classList.add(`bg-[url(${game.imageUrl})]`, "shadow-md", "rounded-lg", "p-6", "text-center");
+            modalContent.style.backgroundImage = `url("${game.imageUrl}")`;
+            modalContent.classList.add( "shadow-md", "rounded-lg", "p-6", "text-center");
+
             modalContent.innerHTML = 
             // this creates the same layout and styling as the game cards and populates it as in the modal
             `
                 <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
-                <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
                 <p class="text-sm text-gray-600">Availability: ${game.filter.join(',&nbsp')}</p>
                 <p class="text-sm text-gray-600">Genre: ${game.genre.join(',&nbsp')}</p>
             `;
             modal.style.display = "block";
+            header.style.zIndex = '0';
         });
         window.onclick = function(event) {
                 if (event.target === modal) {
                     modal.style.display = "none";
+                    header.style.zIndex = '3';
                 };
         };
         timersDiv.appendChild(timerDiv);

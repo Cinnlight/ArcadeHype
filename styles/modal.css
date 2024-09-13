@@ -1,13 +1,12 @@
 .modal {
   display: none; 
   position: fixed; 
-  z-index: 100; 
+  z-index: 400; 
   left: 0;
   top: 0;
   width: 100%; 
   height: 100%; 
   overflow: auto;
-  opacity: 0.6;
   background-color: rgba(60, 60, 60, 0.95);
 }
 
@@ -15,4 +14,51 @@
   margin: 15% auto;
   padding: 20px;
   border: 2px solid white;
+  opacity: 100;
 }
+
+/* this is where I added the ame styling for the modal content */
+
+#modal-content {
+  display:flex;
+  align-items: center;
+  justify-content:space-evenly;
+  flex-wrap:wrap;
+  gap:2em 1em;
+  padding:1em 0;
+}
+
+#modal-content div {
+  width: 20em;
+  height:25em;
+  flex-grow: 2;
+  background-size:cover;
+  background-position:center top;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: flex-end;
+}
+
+#modal-content h2 {
+  margin:4px;
+  color:#fff;
+  text-shadow:1px 1px 0px #000;
+  background-color: rgba(0,0,0,0.8);
+  border-radius:10px;
+  width:100%;
+  padding:2px 0;
+}
+
+#modal-content div p {
+  margin:4px;
+  font-family:var(--pixelify);
+  text-shadow:1px 1px 0px #000;
+  background-color: rgba(0,0,0,0.8);
+  border-radius:10px;
+  width:100%;
+  padding:2px 0;
+}
+
+#modal-content div p:first-of-type {
+  color:#fff;
