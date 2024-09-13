@@ -8,64 +8,37 @@ document.querySelectorAll('.filter-checkbox, .genre-checkbox').forEach(checkbox 
 
 
 
-// Function to filter the games by "filter" and "genre", and return the filtered games.
 function filterGames() {
     let timersDiv = document.getElementById("timers");
-    // Clear the timersDiv before re-rendering the filtered games, so only games matching the filter are displayed.
     timersDiv.innerHTML = "";
 
-    // These will select all input elements with the name "filter" and "genre" that are checked.
-    // Array.from() is used to convert the NodeList returned by querySelectorAll() into an array. (NodeList is an array-like object that is returned by querySelectorAll() and other DOM methods.)
-    // .map(cb => cb.value) is used to create a new array with the values of the checked checkboxes.
-    // cb => cb.value is an arrow function that returns the value of the checked checkbox (e.g., "PC" or "Action"). cb stands for checkbox. and cb.value is the value of the checkbox.
+    // Get the selected filters and genres based on what checkboxes are checked.
     let selectedFilters = Array.from(document.querySelectorAll('input[name="filter"]:checked')).map(cb => cb.value);
     let selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked')).map(cb => cb.value);
 
-    // Check if no filters or genres are selected
-    if (selectedFilters.length === 0 && selectedGenres.length === 0) {
-        // If no filters or genres are selected, display all games
-        games.forEach(game => {
-            let timerDiv = document.createElement("div");
-            timerDiv.className = `bg-[url(${game.imageUrl})] shadow-md rounded-lg p-6 text-center`;
-            timerDiv.innerHTML = `
-                <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
-                <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
-                <p class="text-sm text-gray-400">Availability: ${game.filter.join(',&nbsp')}</p>
-                <p class="text-sm text-gray-400">Genre: ${game.genre.join(',&nbsp')}</p>
-                    
-            `;
-            timersDiv.appendChild(timerDiv);
-        }); // Add closing parenthesis for the event listener function.
-    } else {
-        // This is used to iterate through each game that matches the selected filters and genres, and then creates the timerDiv for each game.
-        // Initial portion is used to ensure that if no filters are selected (the selectedFilters array is empty), all games are displayed.
-        games.filter(game => {
-            const filterMatch = selectedFilters.length === 0 || selectedFilters.some(filter => game.filter.includes(filter));
-            const genreMatch = selectedGenres.length === 0 || selectedGenres.some(genre => game.genre.includes(genre));
-            return filterMatch && genreMatch;
-            
-        }).forEach(game => {
-            let timerDiv = document.createElement("div");
-            timerDiv.className = `bg-[url(${game.imageUrl})] shadow-md rounded-lg p-6 text-center`;
-            timerDiv.innerHTML = 
-            // First line creates a header with the name of the game, along with some Tailwind styling as a placeholder. 
+    // filteredGames becomes a new array by checking initially if any filters are selected, if not then all games will be matched to filteredGames. Otherwise it will check if the selected filters match the game's filter and if the selected genres match the game's genre, and then assign that to filteredGames.
+    let filteredGames = games.filter(game => {
+        const filterMatch = selectedFilters.length === 0 || selectedFilters.some(filter => game.filter.includes(filter));
+        const genreMatch = selectedGenres.length === 0 || selectedGenres.some(genre => game.genre.includes(genre));
+        return filterMatch && genreMatch;
+    });
 
-            // Second line creates a paragraph element with the ID of the game name, which will be used to display the countdown timer, along with some placeholder Tailwind styling.
+    // Render the filtered games
+    filteredGames.forEach(game => {
+        let timerDiv = document.createElement("div");
+        timerDiv.className = `bg-[url(${game.imageUrl})] shadow-md rounded-lg p-6 text-center`;
+        timerDiv.innerHTML = `
+            <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+            <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
+            <p class="text-sm text-gray-400">Availability: ${game.filter.join(',&nbsp')}</p>
+            <p class="text-sm text-gray-400">Genre: ${game.genre.join(',&nbsp')}</p>
+        `;
+        timersDiv.appendChild(timerDiv);
+    });
 
-            // Third and fourth lines create paragraph elements displaying the filter and genre of the game, along with some placeholder Tailwind styling.
-
-            // Fourth line creates an image element with the game's image URL, alt text, and some placeholder Tailwind styling.
-
-            // (/\s+/g, '') is a regular expression that removes all whitespace from the game name. If the game name is Game 1, then the ID would be Game1.
-            `
-                <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
-                <p id="${game.name.replace(/\s+/g, '')}" class="text-2xl font-bold"></p>
-                <p class="text-sm text-gray-400">Availability: ${game.filter.join(',&nbsp')}</p>
-                <p class="text-sm text-gray-400">Genre: ${game.genre.join(',&nbsp')}</p>         
-            `;
-            timersDiv.appendChild(timerDiv);
-        });
-    }
+    // Update timers for the filtered games only, and then starts them back up.
+    updateTimers(filteredGames);
+    startTimers();
 }
 
 // Function to select all checkboxes, iterate through them, and save their state to localStorage.
@@ -84,6 +57,16 @@ function loadCheckboxState() {
     });
 }
 
+let timerInterval;
+
+// Function to start the timers for the filtered games.
+// clearInterval is called to stop that timerInterval that starts on page launch, this is followed by a setInterval that calls the updateTimers function every second, now only for the filtered games.
+function startTimers(filteredGames = games) {
+    if (timerInterval) {
+        clearInterval(timerInterval);
+    }
+    timerInterval = setInterval(() => updateTimers(filteredGames), 1000);
+}
 
 // Call the loadCheckboxState() function to load the checkbox state from localStorage when the page loads.
 loadCheckboxState();
