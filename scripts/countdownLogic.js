@@ -59,9 +59,9 @@ function createTimerElements() {
     });
 }
 
-function updateTimers() {
+function updateTimers(filteredGames = games) {
     // Loops through the games array and updates the countdown timer for each game.
-    games.forEach(game => {
+    filteredGames.forEach(game => {
         // Gets the current date and time.
         let now = new Date().getTime();
         // Calculates the time remaining until the game's release date.
@@ -75,12 +75,16 @@ function updateTimers() {
 
         // Selects the timer element for the game.
         let timerElement = document.getElementById(game.name.replace(/\s+/g, ''));
+        console.log(`Updating timer for: ${game.name}, Time Remaining: ${timeRemaining}`);
         // If the time remaining is greater than 0, display the countdown timer. Otherwise, display the "Released!" message.
-        if (timeRemaining > 0) {
-            timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        } else {
-            timerElement.innerHTML = "Released!<br> Happy gaming.";
-        }
+
+        if (timerElement) {
+                if (timeRemaining > 0) {
+                timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                timerElement.innerHTML = "Released!<br> Happy gaming.";
+            }
+        }       
     });
 }
 
