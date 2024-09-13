@@ -48,7 +48,7 @@
                         <label for="filter-Single-Player">Single Player</label> 
                 </li>
                 <li>
-                    <input type="checkbox" value="Multi Player" class="filter-checkbox" id="filter-Multi-Player">
+                    <input type="checkbox" name="filter" value="Multi Player" class="filter-checkbox" id="filter-Multi-Player">
                        <label for="filter-Multi-Player">Multiplayer</label>
                 </li>
             </ul>
@@ -88,24 +88,6 @@
   </footer>
 
     <!-- this is where the scripts for handling the logic of the webpage goes -->
-      <script>
-        window.onscroll = function () {
-          const backToTop = document.getElementById("back-to-top");
-          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTop.style.display = "block";
-          } else {
-            backToTop.style.display = "none";
-          }
-        };
-    
-        document.getElementById("back-to-top").addEventListener("click", function (e) {
-          e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-      </script>
      <script src="./scripts/countdownLogic.js"></script>
      <script src="./scripts/gameFilterLogic.js"></script>
      <script src="./scripts/collapsibleFilter.js"></script>

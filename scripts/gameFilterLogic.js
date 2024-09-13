@@ -16,12 +16,17 @@ function filterGames() {
     let selectedFilters = Array.from(document.querySelectorAll('input[name="filter"]:checked')).map(cb => cb.value);
     let selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked')).map(cb => cb.value);
 
-    // filteredGames becomes a new array by checking initially if any filters are selected, if not then all games will be matched to filteredGames. Otherwise it will check if the selected filters match the game's filter and if the selected genres match the game's genre, and then assign that to filteredGames.
+    // filteredGames becomes a new array by checking initially if any filters are selected, if not then all games will be matched to filteredGames. Otherwise it will check if the selected filters match the game's filter and if the selected genres match the game's genre, and then assign that to filteredGames. Additionally normalizes the names of the filters and genres to lowercase and removes whitespace.
     let filteredGames = games.filter(game => {
-        const filterMatch = selectedFilters.length === 0 || selectedFilters.some(filter => game.filter.includes(filter));
-        const genreMatch = selectedGenres.length === 0 || selectedGenres.some(genre => game.genre.includes(genre));
+        const filterMatch = selectedFilters.length === 0 || selectedFilters.some(filter => 
+            game.filter.map(f => f.toLowerCase().replace(/\s+/g, '')).includes(filter.toLowerCase().replace(/\s+/g, ''))
+        );
+        const genreMatch = selectedGenres.length === 0 || selectedGenres.some(genre => 
+            game.genre.map(g => g.toLowerCase()).includes(genre.toLowerCase())
+        );
         return filterMatch && genreMatch;
     });
+    
 
     // Render the filtered games
     filteredGames.forEach(game => {
