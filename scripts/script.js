@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     // Handle Back to Top button
-    const backToTopButton = document.getElementById('back-to-top');
+    const backToTopButton = document.getElementById('backToTop');
   
     window.addEventListener('scroll', function () {
         if (window.scrollY > 300) { // Show button after scrolling down 300px
