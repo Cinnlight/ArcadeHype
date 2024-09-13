@@ -284,3 +284,75 @@ nav input:checked + label::before {
 #back-to-top:hover {
     background-color: #ff5d5d;
 }
+/* General styles for the comment section */
+.comment-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out; /* For smooth collapsing */
+  }
+  
+  .comment-section.collapsed {
+    transform: translateY(90%); /* Hides most of the comment section off the bottom of the page */
+  }
+  
+  .comment-toggle {
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000; /* Ensure toggle stays on top */
+  }
+  
+  .comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+  }
+  
+  .comment-form button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .comment-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .comment-list {
+    max-height: 200px;
+    overflow-y: auto;
+    margin: 10px 0;
+  }
+  
+  .comment-list li {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+    background-color: #ff5d5d;
+}
