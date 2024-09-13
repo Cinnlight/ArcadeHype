@@ -12,77 +12,69 @@
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body>
-    <header class="bg-slate-200 py-5">
+    <header class="bg-white py-5">
         <!-- Header and title text -->
-        <h1 class="text-4xl text-center">
-            Arcade<b class="text-red-600 h1Logo">Hype!</b>
+        <h1 class="text-4xl text-center bg-black w-[300px] mx-auto">
+            <span class="text-white">Arcade</span><b class="text-red-600 h1Logo">Hype!</b>
         </h1>
     </header>
     <!-- The 'aside' tag is where the elements that will filter the cards out of the main view go -->
     <aside class="bg-white" id="asideBody">
-        <nav class="">
+        <nav>
             <section class="collapsible-section">
-                <h2>
+                <h2 class="border border-slate-200">
                     <button class="collapsible" id="collapsibleButton">Filter Games</button>
                 </h2>
                 <section class="content" id="collapsibleContent">
-                    <h3 class="bg-slate-200">
-                    Availability
-                    </h3>
-                    <ul>
-                        <li>
-                            <input type="checkbox" name="filter" value="Pc" class="filter-checkbox">
-                                Pc
-                            </input>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="filter" value="Console" class="filter-checkbox">
-                        Console
-                            </input>
-                        </li>
-                    </ul>
-                    <h3 class="bg-slate-200">
-                        Players
-                    </h3>
-                    <ul>
-                        <li>
-                            <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox">
-                                Single Player
-                            </input>
-                        </li>
-                        <li>
-                            <input type="checkbox" value="Multi Player" class="filter-checkbox">
-                                Multiplayer
-                            </input>
-                        </li>
-                    </ul>
-                    <h3 class="bg-slate-200">
-                        Genres
-                    </h3>
-                    <ul>
-                        <li>
-                            <input type="checkbox" name="genre" value="Action" class="genre-checkbox">
-                                Action
-                            </input>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox">
-                                Adventure
-                            </input>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="genre" value="Sports" class="genre-checkbox">
-                                Sports
-                            </input>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="genre" value="RPG" class="genre-checkbox">
-                                RPG
-                            </input>
-                        </li>
-                    </ul>
-                </section>
-            </section>
+            <h3 class="bg-slate-200">
+                Availability
+            </h3>
+            <ul>
+                <li>
+                    <input type="checkbox" name="filter" value="Pc" class="filter-checkbox" id="filter-Pc">
+                         <label for="filter-Pc">PC</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="filter" value="Console" class="filter-checkbox" id="filter-Console">
+                        <label for="filter-Console">Console</label>
+                </li>
+            </ul>
+            <h3 class="bg-slate-200">
+                Players
+            </h3>
+            <ul>
+                <li>
+                    <input type="checkbox" name="filter" value="Single Player" class="filter-checkbox" id="filter-Single-Player">
+                        <label for="filter-Single-Player">Single Player</label> 
+                </li>
+                <li>
+                    <input type="checkbox" value="Multi Player" class="filter-checkbox" id="filter-Multi-Player">
+                       <label for="filter-Multi-Player">Multiplayer</label>
+                </li>
+            </ul>
+            <h3 class="bg-slate-200">
+                Genres
+            </h3>
+            <ul>
+                <li>
+                    <input type="checkbox" name="genre" value="Action" class="genre-checkbox" id="genre-Action">
+                        <label for="genre-Action">Action</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="genre" value="Adventure" class="genre-checkbox" id="genre-Adventure">
+                        <label for="genre-Adventure">Adventure</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="genre" value="Sports" class="genre-checkbox" id="genre-Sports">
+                        <label for="genre-Sports">Sports</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="genre" value="RPG" class="genre-checkbox" id="genre-RPG">
+                        <label for="genre-RPG">RPG</label>
+                </li>
+            </ul>
+        </section>
+    </section>
         </nav>
     </aside>
     <!-- The 'main' tag is where the cards that display each of the different games go -->
