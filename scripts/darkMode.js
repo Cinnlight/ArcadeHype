@@ -1,5 +1,5 @@
 const toggleButton = document.getElementById('dark-mode-toggle');
-const aside = document.getElementById('aside');
+const aside = document.getElementById('asideBody');
 const header = document.getElementById('header');
 const filter = document.getElementById('darkModeFilter');
 const filterButton = document.getElementById('filterButton');
