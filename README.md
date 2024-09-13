@@ -1,26 +1,25 @@
 # Game Release Countdown
 
 ## Overview
-This project displays a countdown timer for the release dates of various games. Users can view the current release date of a game they are interested in, search for different games by category, and read a blurb about each game underneath the countdown. Additionally, users can make comments and notes on games that save locally for later reference.
+This project displays a countdown timer for the release dates of various games. Users can view the current release date of a game they are interested in, search for different games by category, and have their current filters saved locally.
 
 ## User Stories
 ### As a user:
 1. **View Countdown Timer**:
     - I want to view the current release date of a game that I am interested in displayed as a countdown.
-    - I want to read a blurb about the game underneath the countdown.
+    - I want to see what platforms the game is available on, as well as what genres the game is underneath the countdown.
     - I want to see a promotional image of the game.
 
 2. **Search by Category**:
     - I want to be able to search different games by category (e.g., filter, genre).
 
 3. **Read Comments**:
-    - I want to make comments and take notes on each game.
+    - I want to read comments from other users about each game.
 
 ## Features
 - **Countdown Timer**: Displays the time remaining until the release date of each game.
 - **Game Information**: Shows a blurb about the game, including its filter and genre.
 - **Search Functionality**: Allows users to filter games by category and genre using checkboxes.
-- **User Comments**: Displays comments from other users about each game (future implementation).
 
 ## Technologies Used
 - **HTML**: Structure of the web page.
@@ -49,8 +48,8 @@ This project displays a countdown timer for the release dates of various games. 
 ## Usage
 - **View Countdown**: Open the web page to see the countdown timers for each game.
 - **Filter Games**: Use the checkboxes to filter games by category and genre.
-- **Read Blurbs**: Read the blurb about each game underneath the countdown timer.
-- **View Comments**: (Future implementation) Read comments and notes taken on each game.
+- **Read Platforms and Genres**: Read the platforms and genres relevent to each game underneath the countdown timer.
+- **View Comments**: (Future implementation) Read comments from other users about each game.
 
 ## Contributing
 1. **Fork the Repository**: Click the "Fork" button at the top right of this page.
@@ -76,5 +75,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Acknowledgements
 - Thanks to all contributors and users for their support and feedback.
 - Special thanks to the core coding group for this project: anton10mata, dauntss, Duck-Method, ricardoshade, and Cinnlight.
-
----
