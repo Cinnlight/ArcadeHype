@@ -2,19 +2,19 @@
 let games = [
     { name: "Assassin's Creed Shadows", filter: ["Console", "Pc", "Single Player"], genre: ["Action", "RPG"], releaseDate: new Date("November 11, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/05/15/acshadows-1715789601294.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2"},
 
-    { name: "Indiana Jones and the Great Circle", filter: ["Console", "Pc", "Single Player"], genre: ["Action", "Adventure"], releaseDate: new Date("December 8, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/01/18/indianajonesgreatcircle-1705613822118.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
+    { name: "Dragon Age: The Veilguard", filter: ["Console", "Pc", "Single Player"], genre: ["RPG"], releaseDate: new Date("October 30, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/06/06/da-veilguard-1717691587829.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
+
+    { name: "Drova - Forsaken Kin", filter: ["Console", "Pc", "Single Player"], genre: ["RPG"], releaseDate: new Date("October 14, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2023/05/31/library-600x900-1685557954159.jpeg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
 
     { name: "Europa", filter: ["Console", "Pc", "Single Player"], genre: ["Adventure"], releaseDate: new Date("October 10, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2022/12/07/europa-button-02-1670376231449.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
+
+    { name: "Indiana Jones and the Great Circle", filter: ["Console", "Pc", "Single Player"], genre: ["Action", "Adventure"], releaseDate: new Date("December 8, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/01/18/indianajonesgreatcircle-1705613822118.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
+
+    { name: "NHL 25", filter: ["Console", "Multi Player"], genre: ["Sports"], releaseDate: new Date("September 26, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/08/22/nhl-25-button-1724331930889.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },   
 
     { name: "Phoenix Springs", filter: ["Pc", "Single Player"], genre: ["Adventure"], releaseDate: new Date("December 31, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/06/08/untitled-1-1717866642448.png?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
 
     { name: "Undisputed", filter: ["Console", "Pc", "Multi Player"], genre: ["Sports"], releaseDate: new Date("October 10, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2022/10/11/undisputed-button-2-1665519933271.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
-
-    { name: "NHL 25", filter: ["Console", "Multi Player"], genre: ["Sports"], releaseDate: new Date("September 26, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/08/22/nhl-25-button-1724331930889.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
-
-    { name: "Dragon Age: The Veilguard", filter: ["Console", "Pc", "Single Player"], genre: ["RPG"], releaseDate: new Date("October 30, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2024/06/06/da-veilguard-1717691587829.jpg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
-
-    { name: "Drova - Forsaken Kin", filter: ["Console", "Pc", "Single Player"], genre: ["RPG"], releaseDate: new Date("October 14, 2024 23:59:59"), imageUrl: "https://assets-prd.ignimgs.com/2023/05/31/library-600x900-1685557954159.jpeg?width=300&crop=1%3A1%2Csmart&auto=webp&dpr=2" },
 ];
 
 // List of integrated filters and genres
