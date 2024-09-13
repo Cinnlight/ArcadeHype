@@ -250,7 +250,7 @@ nav input:checked + label::before {
     display: none; /* Hidden initially */
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     background-color: #ff0000;
     color: white;
     padding: 10px 15px;
