@@ -48,15 +48,13 @@ function filterGames() {
             // this creates the same layout and styling as the game cards and populates it as in the modal
             `
                 <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+                <p class="text-lg font-medium mb-4">${game.blurb}</p>
             `;
             modal.style.display = "block";
-
-
         });
         window.onclick = function(event) {
                 if (event.target === modal) {
                     modal.style.display = "none";
-
                 };
         };
         timersDiv.appendChild(timerDiv);

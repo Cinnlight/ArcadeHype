@@ -53,9 +53,10 @@
   padding:2px 0;
 }
 
-#modal-content div p {
+#modal-content p {
   margin:4px;
-  font-family:var(--pixelify);
+  color:#fff;
+  font-family:var(--roboto);
   text-shadow:1px 1px 0px #000;
   background-color: rgba(0,0,0,0.8);
   border-radius:10px;
