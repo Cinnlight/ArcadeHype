@@ -13,8 +13,8 @@ This project displays a countdown timer for the release dates of various games. 
 2. **Search by Category**:
     - I want to be able to search different games by category (e.g., filter, genre).
 
-3. **Read Comments**:
-    - I want to read comments from other users about each game.
+3. **View blurb**:
+    - I want to see a blurb about the game when I click on it.
 
 ## Features
 - **Countdown Timer**: Displays the time remaining until the release date of each game.
@@ -49,7 +49,7 @@ This project displays a countdown timer for the release dates of various games. 
 - **View Countdown**: Open the web page to see the countdown timers for each game.
 - **Filter Games**: Use the checkboxes to filter games by category and genre.
 - **Read Platforms and Genres**: Read the platforms and genres relevent to each game underneath the countdown timer.
-- **View Comments**: (Future implementation) Read comments from other users about each game.
+- **View Blurbs**: Click on the game to see a small blurb about it.
 
 ## Contributing
 1. **Fork the Repository**: Click the "Fork" button at the top right of this page.
