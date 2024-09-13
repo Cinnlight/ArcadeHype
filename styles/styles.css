@@ -244,3 +244,24 @@ nav input:checked + label::before {
         max-height: 100%;
     }   
 }
+
+/* Style for Back to Top Button */
+#back-to-top {
+    display: none; /* Hidden initially */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1000; /* To ensure it stays on top of other elements */
+}
+
+#back-to-top:hover {
+    background-color: #ff5d5d;
+}
