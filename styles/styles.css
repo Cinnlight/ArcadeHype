@@ -13,6 +13,7 @@ body {
     grid-template-rows: 5em 20em 1fr;
     width:100%;
     color:#000;
+    font-family:var(--roboto);
 }
 
 header {
@@ -28,11 +29,14 @@ header {
 
 h1 {
     font-family: var(--pixelify);
+    color:#fff;
+    padding:5px 0 8px;
 }
 
-/** Adds text shadow to second half of logo **/
-.h1Logo {
-    text-shadow:2px 2px 0px #000;
+h1:before {
+    content:'≥';
+    color:rgb(220, 38, 38);
+    font-weight:bold;
 }
 
 #asideBody {
@@ -41,6 +45,7 @@ h1 {
     left:0;
     grid-column:1 / 2;
     grid-row: 1 / 3;
+    z-index:99;
 }
 
 nav h2 {
@@ -76,7 +81,7 @@ nav ul {
     display:flex;
     align-items:flex-start;
     justify-content:space-between;
-    /** Makes the UL flow vertically in wide enough browsers **/
+    /** Makes the UL flow vertically in slimmer browsers **/
     flex-direction:column;
     padding: 7% 0 7% 7%;
 }
@@ -89,8 +94,21 @@ nav input {
     display:none;
 }
 
+nav label {
+    font-size:0.9em;
+}
+
 nav input:checked + label {
     font-weight:bold;
+    letter-spacing:0.5px;
+    border-bottom:1px solid rgba(220, 38, 38);
+}
+
+nav input:checked + label::before {
+    content:'≥';
+    color:rgb(220, 38, 38);
+    margin: 0 5px 0 0;
+    font-family:var(--pixelify);
 }
 
 #mainBody {
