@@ -61,7 +61,7 @@ nav h3 {
 
 nav h3::before {
     content:'≥';
-    animation:blink 1.5s infinite alternate;
+    animation:blink 0.8s infinite alternate;
     color:rgb(220, 38, 38);
     font-weight:bold;
     margin: 0 0 0 5px;
@@ -175,6 +175,27 @@ nav input:checked + label::before {
     color:#fff;
 }
 
+/* Style for Back to Top Button */
+#back-to-top {
+    display: none; /* Hidden initially */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1000; /* To ensure it stays on top of other elements */
+}
+
+#back-to-top:hover {
+    background-color: #ff5d5d;
+}
+
 .collapsible-section {
     overflow: hidden;
     width: 100%;
@@ -243,25 +264,4 @@ nav input:checked + label::before {
         display: block;
         max-height: 100%;
     }   
-}
-
-/* Style for Back to Top Button */
-#back-to-top {
-    display: none; /* Hidden initially */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff0000;
-    color: white;
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    z-index: 1000; /* To ensure it stays on top of other elements */
-}
-
-#back-to-top:hover {
-    background-color: #ff5d5d;
 }
