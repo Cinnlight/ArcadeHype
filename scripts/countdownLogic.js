@@ -59,7 +59,6 @@ function createTimerElements() {
         // this will add the eventlistener to each of the created elements and populate the modal element with relevant info and make it viewable
 
         timerDiv.addEventListener('click', () => {
-            console.log(`${game.name}`);
             modalContent.style.backgroundImage = `url("${game.imageUrl}")`;
             modalContent.classList.add( "shadow-md", "rounded-lg", "p-6", "text-center");
 
@@ -98,7 +97,6 @@ function updateTimers(filteredGames = games) {
 
         // Selects the timer element for the game.
         let timerElement = document.getElementById(game.name.replace(/\s+/g, ''));
-        console.log(`Updating timer for: ${game.name}, Time Remaining: ${timeRemaining}`);
         // If the time remaining is greater than 0, display the countdown timer. Otherwise, display the "Released!" message.
 
         if (timerElement) {
