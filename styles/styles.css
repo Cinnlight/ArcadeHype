@@ -96,6 +96,7 @@ nav input {
 
 nav label {
     font-size:0.9em;
+    cursor:pointer;
 }
 
 nav input:checked + label {
@@ -175,40 +176,19 @@ nav input:checked + label::before {
 }
 
 .collapsible-section {
-    /* border: 1px solid #ccc; */
-    /* border-radius: 5px; */
     overflow: hidden;
     width: 100%;
-    /* max-width: 600px; */
     margin: auto;
 }
 
 .collapsible {
-    cursor: pointer;
     padding: 10px;
     text-align: center;
     border: none;
     outline: none;
     width: 100%;
+    cursor: default;
 }
-
-.collapsible:after {
-    content: '\25BC'; /* Down arrow */
-    margin-left: 10px;
-    transition: transform 0.3s;
-}
-
-.collapsible.active:after {
-    transform: rotate(180deg); /* Up arrow */
-}
-
-/* .content {
-    padding: 10px;
-    background-color: #f9f9f9;
-    display: block; 
-} */
-
-
 
 @media screen and (max-width:768px) {
     /** Turn the body into a single column when you size down **/
@@ -229,22 +209,38 @@ nav input:checked + label::before {
         justify-content:space-evenly;
         padding: 3% 0 3% 3%;
     }
-
+    /** Adjusts the height requirements for the AsideBody **/
+    #asideBody {
+        position:relative;
+    }
+    /** Makes pointer show when function is usable **/
+    .collapsible {
+        cursor: pointer;
+    }
+    /** Hides arrow until needed **/
+    .collapsible:after {
+        content: '\25BC'; /* Down arrow */
+        margin-left: 10px;
+        transition: transform 0.3s;
+    }
+    
+    .collapsible.active:after {
+        transform: rotate(180deg); /* Up arrow */
+    }
+    
     .collapsible {
         display: block;
     }
-
+    
     .content {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
         display: none;
     }
-
+    
     .content.expanded {
         display: block;
-        max-height: 500px; 
-        /* Arbitrary large value to fully expand */
-    }
-    
+        max-height: 100%;
+    }   
 }
