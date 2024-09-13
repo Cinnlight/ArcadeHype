@@ -167,8 +167,9 @@ nav input:checked + label::before {
 
 /* Main content styling */
 #mainBody {
+    position: relative;
     grid-column: 2 / 3;
-    grid-row: 2 / 4;
+    grid-row: 2 / 3;
     z-index: 1;
 }
 
@@ -227,6 +228,27 @@ nav input:checked + label::before {
 
 #timers div p:first-of-type {
     color: #fff;
+}
+
+/* Style for Back to Top Button */
+#backToTop {
+    display: none; /* Hidden initially */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 999; /* To ensure it stays on top of other elements */
+}
+
+#backToTop:hover {
+    background-color: #ff5d5d;
 }
 
 /* Dark Mode */
@@ -289,23 +311,4 @@ body.dark-mode {
         position: relative;
 }
 
-/* Style for Back to Top Button */
-#back-to-top {
-    display: none; /* Hidden initially */
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #ff0000;
-    color: white;
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    z-index: 999; /* To ensure it stays on top of other elements */
-}
-
-#back-to-top:hover {
-    background-color: #ff5d5d;
-}
+/** There is a "problem" here for some reason, I can't seem to fix it **/
