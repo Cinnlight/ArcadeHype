@@ -5,14 +5,14 @@
 
 * {
     box-sizing: border-box;
-    color:#000;
 }
 
 body {
     display:grid;
-    grid-template-columns: 10em 1fr;
+    grid-template-columns: 15em 1fr;
     grid-template-rows: 5em 20em 1fr;
     width:100%;
+    color:#000;
 }
 
 header {
@@ -56,8 +56,8 @@ nav h3 {
 
 nav h3::before {
     content:'≥';
-    animation:blink 1.5s infinite;
-    color:red;
+    animation:blink 1.5s infinite alternate;
+    color:rgb(220, 38, 38);
     font-weight:bold;
     margin: 0 0 0 5px;
     text-decoration:none;
@@ -78,6 +78,19 @@ nav ul {
     justify-content:space-between;
     /** Makes the UL flow vertically in wide enough browsers **/
     flex-direction:column;
+    padding: 7% 0 7% 7%;
+}
+
+nav ul li {
+    padding: 1.5% 0 1.5% 0;
+}
+
+nav input {
+    display:none;
+}
+
+nav input:checked + label {
+    font-weight:bold;
 }
 
 #mainBody {
@@ -86,8 +99,106 @@ nav ul {
     z-index:1;
 }
 
-/** When screen is smaller than 768px, make header position relative and wider  **/
+#timers {
+    display:flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    gap:2em 1em;
+    padding:1em 0;
+}
+
+#timers div {
+    width: 20em;
+    height:25em;
+    flex-grow: 2;
+    background-size:cover;
+    background-position:center top;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: flex-end;
+    transition-duration:0.3s;
+}
+
+#timers div:hover {
+    transform:scale(0.98);
+    cursor:pointer;
+}
+
+#timers div:hover h2, #timers div:hover p {
+    background-color:rgba(0,0,0,1);
+}
+
+#timers h2 {
+    margin:4px;
+    color:#fff;
+    text-shadow:1px 1px 0px #000;
+    background-color: rgba(0,0,0,0.7);
+    border-radius:10px;
+    width:100%;
+    padding:2px 0;
+    transition-duration:0.3s;
+}
+
+#timers div p {
+    margin:4px;
+    font-family:var(--pixelify);
+    text-shadow:1px 1px 0px #000;
+    background-color: rgba(0,0,0,0.7);
+    border-radius:10px;
+    width:100%;
+    padding:2px 0;
+    transition-duration:0.3s;
+}
+
+#timers div p:first-of-type {
+    color:#fff;
+}
+
+.collapsible-section {
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    overflow: hidden;
+    width: 100%;
+    /* max-width: 600px; */
+    margin: auto;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.collapsible:after {
+    content: '\25BC'; /* Down arrow */
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.collapsible.active:after {
+    transform: rotate(180deg); /* Up arrow */
+}
+
+/* .content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: block; 
+} */
+
+
+
 @media screen and (max-width:768px) {
+    /** Turn the body into a single column when you size down **/
+    body {
+        display:flex;
+        flex-direction:column;
+    }
+    /** When screen is smaller than 768px, make header position relative and wider  **/
     header {
         width:100%;
         position:relative;
@@ -96,5 +207,26 @@ nav ul {
     /** Makes the UL flow horizontally in smaller browsers **/
     nav ul {
         flex-direction:row;
+        align-items:center;
+        justify-content:space-evenly;
+        padding: 3% 0 3% 3%;
     }
+
+    .collapsible {
+        display: block;
+    }
+
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        display: none;
+    }
+
+    .content.expanded {
+        display: block;
+        max-height: 500px; 
+        /* Arbitrary large value to fully expand */
+    }
+    
 }
