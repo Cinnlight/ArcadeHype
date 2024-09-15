@@ -41,12 +41,13 @@ function filterGames() {
             <p class="text-sm text-gray-400">Genre: ${game.genre.join(',&nbsp')}</p>
         `;
         timerDiv.addEventListener('click', () => {
-            modalContent.style.backgroundImage = `url("${game.imageUrl}")`;
+            modalContent.style.backgroundImage = ` linear-gradient(#000000aa, #000000dd), url("${game.imageUrl}")`;
             modalContent.classList.add( "shadow-md", "rounded-lg", "p-6", "text-center");
             modalContent.innerHTML = 
             // this creates the same layout and styling as the game cards and populates it as in the modal
             `
                 <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+                <img src="${game.imageUrl}">
                 <p class="text-lg font-medium mb-4">${game.blurb}</p>
             `;
             modal.style.display = "block";
