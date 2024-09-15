@@ -22,17 +22,27 @@
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
+  image-rendering: smooth;
 }
 
-/* this is where I added the ame styling for the modal content */
+.modal-content img {
+  min-width: 100px;
+  max-width: 60%;
+  min-height: 100px;
+  max-height: 300px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 5px 5px 10px #000;
+}
+
+/* this is where I added the same styling for the modal content */
 
 #modal-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction:column;
-  gap: 2em 1em;
-  padding-top: 5%;
+  padding-top: 2%;
   box-shadow: 8px 8px 10px #000;
 }
 
@@ -71,3 +81,4 @@
 
 #modal-content div p:first-of-type {
   color:#fff;
+}

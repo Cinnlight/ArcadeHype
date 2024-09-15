@@ -47,6 +47,7 @@ function filterGames() {
             // this creates the same layout and styling as the game cards and populates it as in the modal
             `
                 <h2 class="text-2xl font-bold mb-4">${game.name}</h2>
+                <img src="${game.imageUrl}">
                 <p class="text-lg font-medium mb-4">${game.blurb}</p>
             `;
             modal.style.display = "block";
