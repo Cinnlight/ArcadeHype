@@ -78,3 +78,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Acknowledgements
 - Thanks to all contributors and users for their support and feedback.
 - Special thanks to the core coding group for this project: anton10mata, dauntss, Duck-Method, ricardoshade, and Cinnlight.
+- Information for games, as well as preview images, pulled from https://www.ign.com
