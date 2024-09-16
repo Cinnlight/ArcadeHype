@@ -3,6 +3,9 @@
 ## Overview
 This project displays a countdown timer for the release dates of various games. Users can view the current release date of a game they are interested in, search for different games by category, and have their current filters saved locally.
 
+![image](https://github.com/user-attachments/assets/26f506dc-c140-494e-8b9f-3e4ca69675a0)
+
+
 ## User Stories
 ### As a user:
 1. **View Countdown Timer**:
