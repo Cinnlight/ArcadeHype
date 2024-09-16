@@ -33,7 +33,7 @@ This project displays a countdown timer for the release dates of various games. 
 ## Setup Instructions
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/your-username/game-release-countdown.git
+    git@github.com:Cinnlight/ArcadeHype.git
     cd game-release-countdown
     ```
 
@@ -59,7 +59,7 @@ This project displays a countdown timer for the release dates of various games. 
 2. **Clone Your Fork**:
     ```bash
     git clone git@github.com:Cinnlight/group-02-game-release-tracker.git
-    cd game-release-countdown
+    cd ArcadeHype
     ```
 3. **Create a Branch**:
     ```bash
